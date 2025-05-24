@@ -222,6 +222,17 @@
     text-align: center;
     padding: 0.2rem;
   }
+
+.indicacion{
+  max-width: 100%;
+  display: block;
+  margin: 0.5rem auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  height: fit-content;
+}
+
 /* Responsive */
 @media (max-width: 550px) {
   header h1 {
