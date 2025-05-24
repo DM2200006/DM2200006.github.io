@@ -21,24 +21,17 @@ body {
 }
 
 .imagen3{
-  margin-left: 0;
-  margin-right: 4em;
+  margin-left: 10px;
   max-width: 240px;
   float: left;
-  position: block;
-}
-
-.imagen4{
-  margin-left: 0.1em;
-  max-width: 240px;
-  float: left;
-  position: block;
+  position: absolute;
 }
 
 .textos{
-  margin: 2em 4em 0 0;
+  margin-left: 30%;
   border: 2px #1b263b solid;
-  align-self: flex-start;
+  align-self: center;
+
 }
 
 .coso p{
@@ -48,7 +41,7 @@ body {
 .coso{
   margin: 20px 20px;
   width: 100%;
-  height: 300px;
+  height: 500px;
   display: flex;
 }
 
@@ -244,23 +237,15 @@ a {
     display: block;
     margin: 0;
     width: 100%;
-    height: 30em;
+    height: 40em;
   }
   .imagen3{
-    width: 110px;
-    margin-top: 2em;
-    margin-left: 0.5em;
+    width: 100px;
+    margin-top: 15em;
+    margin-left: 10px;
   }
-
-  .imagen4{
-    width: 110px;
-    margin: 2em 0 0 1em  ;
-    display: block;
-  }
-
   .textos{
-    margin-right: 0;
-    margin-left: 0;
+    margin: 0px;
     text-align: left;
   }
 
