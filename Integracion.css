@@ -247,9 +247,9 @@ a {
     height: 30em;
   }
   .imagen3{
-    width: 100px;
-    margin-top: 15em;
-    margin-left: 10px;
+    width: 110px;
+    margin-top: 2em;
+    margin-left: 0.5em;
   }
 
   .imagen4{
@@ -259,7 +259,8 @@ a {
   }
 
   .textos{
-    margin: 0px;
+    margin-right: 0;
+    margin-left: 0;
     text-align: left;
   }
 
