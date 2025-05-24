@@ -251,6 +251,13 @@ a {
     margin-top: 15em;
     margin-left: 10px;
   }
+
+  .imagen4{
+    width: 110px;
+    margin: 2em 0 0 1em  ;
+    display: block;
+  }
+
   .textos{
     margin: 0px;
     text-align: left;
