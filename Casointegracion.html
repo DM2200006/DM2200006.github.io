@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estudios de Caso - Métodos Numéricos</title>
+  <link rel="stylesheet" href="CasoInt.css" /> 
+</head>
+<body>
+  <header>
+    <h1 class="titulo"><a href="Pagina principal.html">Caso Estudio Integración</a></h1>
+    <nav>
+      <ul class="menu">
+            <li><a href="#casos">Estudios de Caso</a></li>
+            <li><a href="#comparacion">Comparación</a></li>
+            <li><a href="#bibliografia">Bibliografía</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div>
+    <h2>Descripción del Caso de Estudio</h2>
+      <p>Una quebrada de alta pendiente en zona rural aumenta su caudal rápidamente durante las lluvias. 
+        Para prevenir desbordamientos, se requiere estimar el volumen de agua acumulado en un periodo de 6 horas.
+        Sin embargo, la velocidad del caudal no se puede integrar fácilmente de forma analítica.
+        Por eso, se decide aplicar métodos de integración numérica para aproximar el volumen de agua que fluye por metro cuadrado de sección transversal.
+      </p>
+
+    <h2>Funcion Utilizada</h2>
+    <img class="imagen" src="imagenes/Formula.png" alt="Funcion">
+
+    <h2>Variables Involucradas</h2>
+      <p>• 𝑥: tiempo (en horas)</p>
+      <p>• 𝑓(𝑥): caudal específico (en m³/s por m²)</p>
+      <p>• 𝑉: volumen acumulado de agua (en m³/m²)</p>
+
+    <h2>Objetivos</h2>
+      <p>Estimar el volumen de agua que fluye por una quebrada durante las primeras seis horas de lluvia, aplicando métodos de integración numérica, con el fin de analizar cuál método ofrece mayor precisión y utilidad en el contexto del diseño de obras hidráulicas preventivas.</p>
+      <h3>Objetivos específicos:</h3>
+      <p>• Representar matemáticamente el comportamiento del caudal de la quebrada a lo largo del tiempo mediante una función exponencial.</p>
+      <p>• Aplicar los métodos de integración numérica simples y compuestos (trapecio, Simpson 1/3 y Simpson 3/8) para calcular el volumen de agua acumulado entre las 0 y las 6 horas.</p>
+      <p>• Desarrollar un algoritmo en Python que permita ingresar cualquier función y calcular su integral definida usando los métodos seleccionados.</p>
+      <p>• Comparar los resultados numéricos obtenidos con el valor de la integral exacta para evaluar la precisión de cada método en términos de error absoluto.</p>
+      <p>• Determinar qué método de integración es más adecuado para este tipo de situaciones hidráulicas, considerando la relación entre precisión y complejidad del método.</p>
+      <p>• Analizar los resultados obtenidos para proponer un criterio técnico de selección del método más confiable en futuros estudios similares sobre caudales variables.</p>
+
+    <h2>Restricciones y Condiciones</h2>
+      <h3>Naturaleza de la función</h3>
+        <p><em>𝑓(𝑥)=4𝑥^2𝑒^(−0.5𝑥)</em>
+        representa un caudal específico en función del tiempo, donde:
+        Al inicio <em>(𝑥=0)</em> , el caudal es nulo. 
+        Luego crece rápidamente (por las lluvias intensas).
+        Posteriormente decrece, modelando la caída del caudal por el paso de la tormenta.
+        no se puede integrar analíticamente con métodos clásicos, porque su integral indefinida no tiene una expresión cerrada. Por eso, se requiere usar integración numérica para calcular el área bajo la curva (el volumen de agua acumulado).</p>
+      <h3>Subintervalos elegidos</h3>
+        <p>Se utilizó un número de subintervalos <em>𝑛=6</em> por las siguientes razones:
+        Es par, lo que permite aplicar el método de Simpson 1/3 compuesto.
+        Es múltiplo de 3, lo que permite aplicar también Simpson 3/8 compuesto.
+        Representa un buen equilibrio entre precisión y esfuerzo computacional, dividiendo el intervalo de 6 horas en tramos de 1 hora cada uno.
+        Este valor garantiza que se puedan comparar todos los métodos compuestos bajo las mismas condiciones de entrada.</p>
+      <h3>Intervalo de integración</h3>
+        <p>Se trabaja en el intervalo cerrado [0,6], que representa:
+        El período activo de precipitación intensa sobre la cuenca hidrográfica.
+        Un tiempo de análisis limitado a 6 horas por motivos de ingeniería, ya que después de ese punto se considera que:
+        El caudal disminuye a niveles no significativos.
+        La estructura hidráulica (canal, vertedero, represa) debe haber respondido ya a la carga máxima.
+        Esto permite simplificar el modelo físico, concentrando los cálculos en el periodo más crítico.</p>
+      <h3>Comparación con la realidad</h3>
+        <p>Aunque la función fue elegida para facilitar el estudio, refleja razonablemente el comportamiento real de un caudal creciente y luego decreciente:
+        En la realidad, esta función podría haberse generado a partir de datos recolectados por sensores de caudal durante lluvias pasadas.
+        Es común utilizar modelos de este tipo para predecir escenarios en diseño de drenajes, vertederos o diques.
+        La ventaja del modelo es que se puede adaptar a diferentes regiones ajustando sus parámetros mediante herramientas de regresión.
+        Por tanto, aunque es un modelo teórico, tiene plena aplicación práctica en estudios hidrológicos y diseño de infraestructura hidráulica.</p>
+    </div>
+
+      <section id="metodos">
+        <div class="metodo">
+        <h2>Calculos</h2>
+        <h3 class="text">Metodo del Trapecio</h3>
+          <img class="imagen1" src="imagenes/Trapecio.png" alt="">
+          <img class="imagen1" src="imagenes/TrapecioR.png" alt="">
+        <h3 class="text">Metodo Simpson 1/3</h3>
+          <img class="imagen1" src="imagenes/Trapecio.png" alt="">
+          <img class="imagen1" src="imagenes/Sipmson13.png" alt=""> 
+        <h3 class="text">Metodo Simpson 3/8</h3>
+          <img class="imagen1" src="imagenes/Trapecio.png" alt="">
+          <img class="imagen1" src="imagenes/simpson38.png" alt="">
+        </div>
+        </section>
+      <div>
+      <h2>Resultados</h2>
+      Los resultados obtenidos a partir de los métodos de integración numérica representan las aproximaciones del volumen de agua que fluye por la quebrada durante las primeras 6 horas de lluvia intensa. El procedimiento fue realizado con tres métodos compuestos distintos (Trapecio, Simpson 1/3 y Simpson 3/8), con el objetivo de determinar cuál se aproxima más al valor exacto y no depender de un solo método, asegurando mayor confiabilidad.
+
+      <h2>Comparación entre metodos</h2>
+      <img src="imagenes/ComparacionR.png" alt="">
+      <p>De los tres métodos numéricos aplicados para estimar el volumen de agua acumulado en la quebrada, el método del trapecio compuesto resulta ser el menos preciso, debido a que aproxima el área bajo la curva utilizando segmentos lineales. Esta aproximación tiende a subestimar o sobreestimar el área cuando la función presenta curvatura significativa, como en este caso.
+      En contraste, los métodos de Simpson (1/3 y 3/8 compuestos) ofrecen una mayor precisión, ya que utilizan funciones cuadráticas y cúbicas, respectivamente, para aproximar el comportamiento de la curva. Ambos métodos entregan resultados muy similares entre sí en este caso específico, con un error absoluto menor a 0.1 unidades respecto al valor exacto de la integral.
+      Cabe destacar que:</p>
+      <p>El método de Simpson 1/3 compuesto es generalmente más eficiente cuando se cuenta con un número par de subintervalos.</p>
+      <p>El método de Simpson 3/8 compuesto requiere que el número de subintervalos sea múltiplo de tres, lo cual puede ser una ligera restricción en ciertos casos.</p>
+      </div>
+
+      <section id="metodos">
+        <div class="metodo">
+          <h2>Algoritmo</h2>
+            <button class="boton"><a href="https://onlinegdb.com/Xma_BTmwh">Presioname</a></button>
+        </div>
+        <div class="metodo">
+          <h2>Infografía</h2>
+            <button class="boton"><a href="Infografia Int.html">Presioname</a></button>
+        </div>
+        <div class="metodo1">
+          <h2>Video</h2>
+            <button class="boton"><a href="">Presioname</a></button>
+        </div>
+      </section>
+</body>
+</html>
+

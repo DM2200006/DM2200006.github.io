@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estudios de Caso - Métodos Numéricos</title>
+  <link rel="stylesheet" href="CasoDif.css" /> 
+</head>
+<body>
+  <header>
+    <h1 class="titulo"><a href="Pagina principal.html">Caso Estudio Diferenciacion</a></h1>
+    <nav>
+      <ul class="menu">
+            <li><a href="#casos">Estudios de Caso</a></li>
+            <li><a href="#comparacion">Comparación</a></li>
+            <li><a href="#bibliografia">Bibliografía</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div>
+    <h2>Descripción del Caso de Estudio</h2>
+      <p>Un automóvil recorre una carretera y se registran sus posiciones en intervalos de tiempo iguales. 
+         Se desea conocer su velocidad instantánea en el tiempo t = 2 segundos, usando métodos de diferenciación numérica: derivada hacia adelante, hacia atrás y central.
+      </p>
+
+    <h2>Datos Registrados</h2>
+    <img class="imagen" src="imagenes/Datos-Registrados.png" alt="Datos Registrados">
+
+    <h2>Variables Involucradas</h2>
+      <p>• t: Tiempo en segundos (s), en el cual se registra la posición del automóvil.</p>
+      <p>• f(t): Función que representa la posición del automóvil en metros (m) respecto al tiempo.</p>
+      <p>• h: Paso o intervalo de tiempo entre mediciones, en este caso h = 1 s.</p>
+      <p>• f'(t): Derivada de la función posición, que representa la velocidad instantánea del automóvil.</p>
+
+    <h2>Funcion Utilizada</h2>
+      <p>Se propone la siguiente función para modelar el movimiento del automóvil:</p>
+        <img class="imagen" src="imagenes/Funcion-Utilizada.png" alt="Funcion">
+      <p>La derivada de esta función es:</p>
+        <img class="imagen" src="imagenes/Funcion-dx.png" alt="Funcion Derivada">
+      <p>Esta derivada nos permite estimar la velocidad instantánea en cualquier momento. Por ejemplo, en t = 2 segundos:</p>
+        <img class="imagen" src="imagenes/Funcion-Resultado.png" alt="Resultado de la Funcion">
+
+
+    <h2>Objetivo general:</h2>
+      <p>Estimar la velocidad instantánea de un automóvil en un instante específico (t = 2 s), aplicando métodos de diferenciación numérica.</p>
+    <h2>Objetivos específicos:</h2>
+      <p>o	Aplicar el método de derivada hacia adelante para estimar la velocidad en t = 2 s.</p>
+      <p>o	Aplicar el método de derivada hacia atrás para la misma estimación.</p>
+      <p>o	Aplicar el método de derivada central, que combina datos anteriores y posteriores al instante t = 2 s.</p>
+
+    <div>
+    <h2>Restricciones y Condiciones</h2>
+      <h3>Condiciones</h3>
+        <p>Se estudia el movimiento de un automóvil cuya posición se registra en intervalos de tiempo iguales.</p>
+        <p>El análisis se enfoca en calcular la velocidad instantánea del automóvil en el tiempo t = 2 segundos.</p>
+        <p>Los datos registrados incluyen el tiempo (en segundos) y la posición (en metros).</p>
+        <p>El intervalo de tiempo entre mediciones es constante: h = 1 s.</p>
+        <p>Los datos disponibles corresponden a los tiempos t = 0, 1, 2, 3 y 4 segundos.</p>
+        <p>Se utiliza una función cuadrática propuesta para modelar el movimiento del automóvil: f(t) = 0.9t² + 0.1t.</p>
+        <p>Se aplican tres métodos de diferenciación numérica: derivada hacia adelante, derivada hacia atrás y derivada central</p>
+        <p>Se utiliza la información de la posición del automóvil para calcular la derivada numérica en t = 2 s.</p>
+      <h3>Restricciones</h3>
+        <p>El paso de tiempo entre mediciones es fijo (h = 1 s); no se considera ninguna variación temporal.</p>
+        <p>El análisis está limitado al intervalo de tiempo [0, 4] segundos, ya que no se disponen de datos fuera de este rango.</p>
+        <p>La función f(t) = 0.9t² + 0.1t es una aproximación del movimiento del automóvil y se considera válida solo en el intervalo observado.</p>
+        <p>No se pueden aplicar todos los métodos numéricos en todos los puntos; por ejemplo, no es posible usar la derivada hacia adelante en t = 4 s ni hacia atrás en t = 0 s.</p>
+        <p>Los métodos de diferenciación numérica utilizados son de primer orden, lo que introduce un margen de error en las estimaciones.</p>
+        <p>No se consideran factores externos como fricción, pendiente o aceleración variable fuera de lo modelado.</p>
+    </div>
+
+      <h2>Calculos</h2>
+        <div class="metodo">
+        <h3>Derivada Hacia Adelante</h3>
+          <img class="imagen" src="imagenes/CasoDif/AD.jpg" alt="">
+          <p>Fórmula: f'(x) ≈ (f(x + h) - f(x)) / h</p>
+          <p>Datos usados: f(2) = 7.4, f(3) = 15.2, h = 1</p>
+          <p>Cálculo: f'(2) ≈ (15.2 - 7.4) / 1 = 7.8 m/s</p>
+        </div>
+        <div class="metodo">
+        <h3>Derivada Hacia Atras</h3>
+          <img class="imagen"  src="imagenes/CasoDif/AT.jpg" alt="">
+          <p>Fórmula: f'(x) ≈ (f(x) - f(x - h)) / h</p>
+          <p>Datos usados: f(2) = 7.4, f(1) = 2.7, h = 1</p>
+          <p>Cálculo: f'(2) ≈ (7.4 - 2.7) / 1 = 4.7 m/s</p>
+        </div>
+        <div class="metodo2">
+        <h3>Derivada Central</h3>
+          <img class="imagen" src="imagenes/CasoDif/CN.jpg" alt="">
+          <p>Fórmula: f'(x) ≈ (f(x + h) - f(x - h)) / (2h)</p>
+          <p>Datos usados: f(3) = 15.2, f(1) = 2.7, h = 1</p>
+          <p>Cálculo: f'(2) ≈ (15.2 - 2.7) / 2 = 6.25 m/s</p>
+      </div>
+
+      <h2>Resultados</h2>
+      <p>Los resultados obtenidos mediante derivadas numéricas permiten estimar la velocidad en t = 2 s a partir de datos discretos de posición. La derivada hacia atrás fue la más precisa (4.7 m/s), seguida de la central (6.25 m/s) y, finalmente, la derivada hacia adelante, que presentó el mayor error (7.8 m/s). Esto evidencia que la elección del método influye en la exactitud, especialmente cuando los datos no siguen un comportamiento ideal.</p>
+
+      <h2>Comparación entre metodos</h2>
+      <img class="imagen" src="imagenes/Diferenciacion/Resultados-Caso.png" alt="">
+      <p>En el análisis de la velocidad mediante métodos numéricos, se observó que todos los enfoques utilizados sobreestimaron el valor real de 3.7 m/s. 
+      La derivada hacia atrás resultó ser la más cercana al valor exacto, aunque aún presentó cierta desviación. 
+      A pesar de que la derivada central es teóricamente más precisa por su simetría, en este caso mostró un mayor 
+      error, probablemente porque los datos de posición no siguen con exactitud una función cuadrática ideal. 
+      Por otro lado, la derivada hacia adelante fue la que presentó el mayor error, lo cual sugiere que el cambio de posición entre los tiempos t = 2 y t = 3 
+      segundos fue más abrupto en comparación con los intervalos anteriores, afectando así la estimación.</p>
+      
+    
+      <!-- Aqui va un cuadro con una imagen para que cuando se presione salte al link, tambien que vaya en columnas como antes con un boton en donde al presionar te mande a lo que se necesita -->
+      <section id="metodos">
+        <div class="metodo">
+          <h2>Algoritmo</h2>
+            <button class="boton"><a href="">Presioname</a></button>
+        </div>
+        <div class="metodo">
+          <h2>Infografía</h2>
+            <button class="boton"><a href="Infografia.html">Presioname</a></button>
+        </div>
+        <div class="metodo1">
+          <h2>Video</h2>
+            <button class="boton"><a href="https://youtu.be/LAnS93cBzGc?feature=shared">Presioname</a></button>
+        </div>
+      </section>
+</body>
+</html>
+

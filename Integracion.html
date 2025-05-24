@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estudios de Caso - Métodos Numéricos</title>
+  <link rel="stylesheet" href="Integracion.css" /> 
+</head>
+<body>
+  <header class="cabecera">
+    <h1 class="titulo"><a href="Pagina principal.html">Integración Numérica</a></h1>
+    <nav>
+      <ul class="menu">
+        <li><a href="#estudio-caso">Estudio de Caso</a></li>
+        <li><a href="#Ejemplo">Ejemplo Paso a Paso</a></li>
+        <li><a href="#analisis">Analisis</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<section>
+  <div class="cuerpo">
+    <section class="introduccion">
+      <h2>¿Qué es? ¿Cuándo se utiliza?</h2>
+        
+        <img src="imagenes/trapezregel_es.jpg" alt="Trapezoidal Rule" class="imagen">
+        <p>Es un proceso que permite calcular el valor de una integral definida utilizando métodos numéricos, como la regla del trapecio, la regla de Simpson. </P>
+        <P>Que se utiliza cuando no es posible encontrar una primitiva de forma analítica, se recurre a métodos numéricos que estiman el valor de la integral definida como suma de áreas.</p>
+    </section>
+
+  <section class="rectangulos">
+    <h2>Regla de los rectángulos</h2>
+    <p>Aproxima la integral sumando áreas de rectángulos construidos sobre los valores de la función. Fórmula general:</p>
+    <p>∫<sub>a</sub><sup>b</sup> f(x) dx ≈ h * Σ f(x<sub>i</sub>)</p>
+    <img src="imagenes/IntegracionT.png" alt="Integración Rectángulos" class="imagen">
+
+    <div class="diferenciacion">
+      <h3>Diferenciación por áreas iguales:</h3>
+      <p>a) Se usan las diferencias divididas centradas para estimar la derivada en cada intervalo entre los datos.</p>
+      <p>b) Las estimaciones de la derivada se representan en forma de gráfica de barras. Se superpone una curva suave sobre esta gráfica para aproximar el área bajo la gráfica de barras. Esto se lleva a cabo al dibujar la curva de tal forma que áreas iguales positivas y negativas estén equilibradas.</p>
+      <p>c) Entonces, es posible leer los valores de dy/dx de la curva suave.</p>
+    </div>
+  </section>
+
+    <section id="bloque1">
+    <h2>Métodos</h2>
+
+    <div class="bloque">
+      <h4>Regla del Trapecio</h4>
+        <p>Aproxima la función por segmentos lineales (trapecios). Es de orden 1 y mejora respecto a los rectángulos.</p>
+          <img src="imagenes/ForumulaT.png" alt="Fórmula Trapecio" class="imagen2">
+        <p>Representación gráfica de la regla del trapecio.</p>
+          <img src="imagenes/representacionT.png" alt="Gráfico Trapecio" class="imagen2">
+    </div>
+
+    <div class="bloque">
+        <h4>La regla del trapecio de aplicación múltiple</h4>
+          <p>Una forma de mejorar la precisión de la regla del trapecio consiste en dividir el intervalo de integración de a a b en varios segmentos, y aplicar el método a cada uno de ellos.</p>
+      <div class="coso">
+          <img src="imagenes/tMultiple.png" alt="Trapecio Múltiple" class="imagen3">
+        <div class="textos">
+          <p>Ilustración de la regla del trapecio de aplicación múltiple.</p>
+          <p>a) Dos segmentos</p> 
+          <p>b) tres segmentos</p> 
+          <p>c) cuatro segmentos</p> 
+          <p>d) cinco segmentos.</p>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <div class="metodo">
+      <h3>Reglas de Simpson</h3>
+      <p style="text-align: center;">Además de aplicar la regla del trapecio con una segmentación más fina, otra forma de obtener una estimación más exacta de una integral consiste en usar polinomios de grado superior para unir los puntos. Por ejemplo, si hay otro punto a la mitad entre f(a) y f(b), los tres puntos se pueden unir con una parábola. Si hay dos puntos igualmente espaciados entre f(a) y f(b), los cuatro puntos se pueden unir mediante un polinomio de tercer grado.</p>
+      <img src="imagenes/Simpson-Integral.png" alt="Simpson General" class="imagen">
+
+      <section id="metodos">
+      <div class="metodo">
+        <h4>Simpson 1/3</h4>
+        <p>Este método se utiliza para aproximar el área bajo una curva usando parábolas. Requiere dividir el intervalo en un número par de subintervalos, todos con el mismo tamaño. Es más preciso que el método del trapecio porque considera la curvatura de la función. Es ideal cuando se tienen pocos datos y se busca una buena aproximación.</p>
+        <img src="imagenes/s13.png" alt="Simpson 1/3" class="imagen">
+        <p>a) Descripción gráfica de la regla de Simpson 1/3, que consiste en tomar el área bajo una parábola que une tres puntos.</p>
+      </div>
+
+      <div class="metodo">
+        <h4>Simpson 3/8</h4>
+        <p>Este método también sirve para aproximar el área bajo una curva, pero en lugar de usar parábolas, utiliza polinomios cúbicos (de tercer grado). Se aplica cuando el número de subintervalos es múltiplo de 3. Es útil cuando el método 1/3 no se puede aplicar directamente o cuando se desea una mayor precisión en ciertos casos.</p>
+        <img src="imagenes/s38.png" alt="Simpson 3/8" class="imagen">
+        <p>b) Descripción gráfica de la regla de Simpson 3/8, que consiste en tomar el área bajo una ecuación cúbica que une cuatro puntos.</p>
+      </div>
+    </div>
+  </section>
+  <div class="cuerpo 2">
+  <section class="importancia">
+    <h2>Importancia en la ingeniería</h2>
+    <p>La integración numérica es fundamental en ingeniería porque permite calcular cantidades como área, volumen, masa o energía cuando las funciones involucradas son demasiado complejas para resolverse analíticamente o están definidas solo por datos discretos. Se aplica ampliamente en campos como la hidráulica, la transferencia de calor, la ingeniería estructural, eléctrica y química, brindando soluciones prácticas cuando el modelo matemático exacto no está disponible. Esta herramienta convierte la necesidad de integrar en una oportunidad de aproximar con precisión, facilitando el análisis y diseño de sistemas reales en condiciones variables.</p>
+  </section>
+
+    <section id="Ejemplo">
+      <section class="ejemplo">
+    <h2>Ejemplo</h2>
+    <p>Resultados de la regla del trapecio de aplicación múltiple para estimar la integral de f(x) = 0.2 + 25x – 200x² + 675x³ – 900x⁴ + 400x⁵ de x = 0 a 0.8.</p>
+    </section>
+      </section>
+
+    <section id="analisis">
+        <h2>Consideraciones</h2>
+    <p>El valor exacto es 1.640533.</p>
+    <img src="imagenes/ResultadosT.png" alt="Resultados Trapecio" class="imagen">
+    </section>
+
+  <section id="estudio-caso">
+    <button class="boton" ><a href="Casointegracion.html">Estudio de caso </a></button>
+  </section>
+  </div>
+  </div>
+</section>
+</body>
+</html>
